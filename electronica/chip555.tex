@@ -13,11 +13,53 @@ El chip 555 es un circuito integrado que se utiliza para generar señales de tem
 
 \subsection{Patitas}
 
-\subsection{Astable}
+El chip 555 tiene 8 patitas.
 
-La configuración astable del chip 555 nos permite oscilar entre dos estados, lo que es útil para generar señales de reloj, o de frentón para osciladores.
+\begin{itemize}
+    \item 01: GND
+    \item 02: Trigger
+    \item 03: Output
+    \item 04: Reset
+    \item 05: Control
+    \item 06: Threshold
+    \item 07: Discharge
+    \item 08: $V_{CC}$
+\end{itemize}
 
-\subsection{Monostable}
+\subsection{Circuito astable}
+
+La configuración astable del chip 555 nos permite oscilar entre dos estados, lo que es útil para generar señales de reloj, o de frentón para osciladores de baja frecuencia o de audio.
+
+\subsubsection{Alimentación}
+
+\begin{enumerate}
+    \item Patita 4 conectada a $V_{CC}$
+    \item Patita 8 conectada a $V_{CC}$
+    \item Patita 1 conectada a GND
+    \item Patita 5 conectada a GND a través de un capacitor cerámico de 100 nF
+\end{enumerate}
+
+\subsubsection{Entradas}
+
+\begin{enumerate}
+    \item Patita 2 conectada a patita 6
+    \item Patita 2 conectada a tierra a través de un capacitor electrolítico de 10 \textmu F
+    \item Patita 2 conectada a la patita 3 de un potenciómetro de 100 k$\Omega$
+    \item Patita 7 conectada a patita 2 del mismo potenciómetro del paso anterior
+    \item Patita 7 conectada a $V_{CC}$ a través de un resistor de 
+\end{enumerate}
+
+
+\subsubsection{Salidas}
+
+\begin{enumerate}
+    \item Patita 3 es la salida del circuito
+\end{enumerate}
+
+Recomendamos para probar la salida del circuito, conectar la patita 3 a un LED y un resistor de 220 $\Omega$ a tierra.
+
+\subsection{Circuito monostable}
+
 
 
 \newpage
