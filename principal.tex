@@ -1,6 +1,9 @@
 \documentclass[10pt, openany]{book}
 
 \usepackage{hyperref}
+\usepackage{glossaries}
+\makeglossaries
+\setglossarystyle{altlist}
 
 \usepackage[paperwidth=148mm, paperheight=210mm, margin=1.5cm]{geometry}
 
@@ -26,6 +29,8 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
+\input{glosario}
+
 \begin{document}
 
 \begin{titlepage}
@@ -50,6 +55,7 @@
 \newpage
 
 \part{Info}
+
 
 \subfile{info/prefacio}
 \subfile{info/autores}
@@ -90,5 +96,8 @@
 \subfile{computacion/variables}
 
 \subfile{computacion/funciones}
+
+
+\printglossaries
 
 \end{document}
