@@ -9,7 +9,7 @@
 
 \chapter{Cuatro cuadradas}
 
-En este capítulo abordaremos el diseño de un sintetizador de cuatro pasos de onda cuadrada modular autocontenido, incluyendo una cadena desde reloj hasta parlante.
+En este capítulo abordaremos el diseño de un sintetizador modular de cuatro pasos de onda cuadrada, incluyendo una cadena autoncontenida, desde reloj hasta parlante.
 
 A grandes ragos tendremos los siguientes módulos:
 
@@ -21,7 +21,48 @@ A grandes ragos tendremos los siguientes módulos:
     \item Parlante
 \end{enumerate}
 
+\section{Reloj}
+
+Para el módulo de reloj proponemos el uso del chip 555 en modo astable, explicado en \ref{sec:chip555}.
+
+\subsection{Entradas}
+
+Las entradas al reloj son 2:
+
+\begin{enumerate}
+    \item Voltaje de alimentación
+    \item Tierra
+\end{enumerate}
+
+\subsection{Salidas}
+
+Las salidas al reloj es 1: la señal de reloj, una onda cuadrada que alterna entre 0V y el voltaje de alimentación.
+
+\section{Secuenciador}
+
+Para el módulo de secuenciador proponemos el uso del chip 4017, explicado en \ref{sec:chip4017}.
+
+\subsection{Entradas}
+
+Las entradas al secuenciador son 3
+
+\begin{enumerate}
+    \item Señal de reloj
+    \item Voltaje de alimentación
+    \item Tierra
+\end{enumerate}
+
+\subsection{Salidas}
+
+Las salidas al secuenciador son 4: cada 1 corresponde a un paso del secuenciador, alternando entre 0V y el voltaje de alimentación.
+
+\begin{enumerate}
+    \item Paso 1
+    \item Paso 2
+    \item Paso 3
+    \item Paso 4
+\end{enumerate}
+
 \newpage
 
 \end{document}
-
