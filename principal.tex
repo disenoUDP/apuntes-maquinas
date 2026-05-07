@@ -22,7 +22,7 @@
 \usepackage[paperwidth=148mm, paperheight=210mm, margin=1.5cm]{geometry}
 
 \usepackage[T1]{fontenc}
-\usepackage{noto}
+\IfFileExists{noto.sty}{\usepackage{noto}}{}
 
 \usepackage{graphicx}
 \graphicspath{imagenes/}
