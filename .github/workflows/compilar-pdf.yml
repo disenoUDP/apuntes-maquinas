@@ -1,0 +1,79 @@
+name: compilar y subir PDF
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            latexmk \
+            biber \
+            texlive-latex-extra \
+            texlive-lang-spanish \
+            texlive-fonts-recommended \
+            texlive-pictures \
+            texlive-science \
+            texlive-extra-utils
+
+      - name: compile PDF
+        run: |
+          latexmk -pdf -halt-on-error -interaction=nonstopmode principal.tex
+
+      - name: preparar sitio
+        run: |
+          mkdir site
+          cp principal.pdf site/principal.pdf
+
+          cat > site/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>disenoUDP - apuntes máquinas</title>
+            <style>
+              body { font-family: sans-serif; margin: 0; }
+              .content { padding: 1rem; background: #111; color: white; }
+              iframe { width: 100%; height: 90vh; border: none; }
+            </style>
+          </head>
+          <body>
+            <div class="content">Apuntes máquinas — PDF publicado automáticamente</div>
+            <iframe id="viewer" src="principal.pdf"></iframe>
+          </body>
+          </html>
+          EOF
+
+      - name: upload artifact for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
