@@ -32,7 +32,7 @@ jobs:
 
       - name: compile PDF
         run: |
-          latexmk -pdf -interaction=nonstopmode principal.tex
+          latexmk -pdf -halt-on-error -interaction=nonstopmode principal.tex
 
       - name: preparar sitio
         run: |
@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency:
       group: pages
-      cancel-in-progress: true
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
