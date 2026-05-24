@@ -22,17 +22,26 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             latexmk \
+            lmodern \
             biber \
+            texlive-xetex \
+            texlive-luatex \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
             texlive-latex-extra \
             texlive-lang-spanish \
-            texlive-fonts-recommended \
             texlive-pictures \
             texlive-science \
             texlive-extra-utils
 
       - name: compile PDF
         run: |
-          latexmk -pdf -halt-on-error -interaction=nonstopmode principal.tex
+          latexmk  \
+          -lualatex \
+          -file-line-error \
+          -halt-on-error \
+          -interaction=nonstopmode \
+          principal.tex
 
       - name: preparar sitio
         run: |
