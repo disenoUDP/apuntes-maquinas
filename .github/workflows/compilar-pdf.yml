@@ -32,7 +32,6 @@ jobs:
           texlive-bibtex-extra \
           texlive-pictures \
           biber \
-          makeindex \
           fonts-noto \
           fonts-noto-core \
           fonts-noto-extra
