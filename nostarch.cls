@@ -340,8 +340,12 @@
   \endlist
   \egroup
   \clearpage}
-\def\briefcontentsname{{Brief Contents}}
-\def\contentsname{Contents in Detail}%
+% espanol
+% \def\briefcontentsname{{Brief Contents}}
+\def\briefcontentsname{{Contenidos Resumidos}}
+% espanol
+% \def\contentsname{Contents in Detail}%
+\def\contentsname{Contenidos Detallados}%
 \AtBeginDocument{\@ifpackageloaded{babel}{%
   \addto\captionsenglish{%
     \renewcommand{\contentsname}%
@@ -360,7 +364,9 @@
   \item\relax
     {\centering
      \dogma\fontsize{16\p@}{18\p@}\selectfont
-      \MakeUppercase{\sochapter{Brief Contents}}\par}\vskip40pt%
+     % espanol
+      % \MakeUppercase{\sochapter{Brief Contents}}\par}\vskip40pt%
+      \MakeUppercase{\sochapter{Contenidos Resumidos}}\par}\vskip40pt%
   \@starttoc{tbc}%
   \endlist
   \egroup}
@@ -377,7 +383,9 @@
   \item\relax
     {\centering
      \dogma\fontsize{16\p@}{18\p@}\selectfont
-      \MakeUppercase{\sochapter{Contents in Detail}}\par}\vskip18pt%
+      % espanol
+      % \MakeUppercase{\sochapter{Contents in Detail}}\par}\vskip18pt%
+      \MakeUppercase{\sochapter{Contenidos Detallados}}\par}\vskip18pt%
   \@starttoc{toc}%
   \endlist
   \egroup}
