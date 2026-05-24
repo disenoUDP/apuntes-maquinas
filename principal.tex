@@ -2,15 +2,6 @@
 
 \usepackage{xcolor}
 
-\definecolor{linkgray}{gray}{0.3}
-
-\usepackage[
-  colorlinks=true,
-  linkcolor=linkgray,
-  citecolor=linkgray,
-  urlcolor=linkgray
-]{hyperref}
-
 \usepackage{csquotes}
 \usepackage[style=verbose-note]{biblatex}
 \addbibresource{biblio.bib}
@@ -19,19 +10,14 @@
 \makeglossaries
 \setglossarystyle{altlist}
 
-\usepackage[paperwidth=148mm, paperheight=210mm, margin=1.5cm]{geometry}
+% \usepackage{graphicx}
+% \graphicspath{imagenes/}
 
-\usepackage[T1]{fontenc}
-\IfFileExists{noto.sty}{\usepackage{noto}}{\usepackage{lmodern}}
+% \usepackage{float}
+% \usepackage{placeins}
 
-\usepackage{graphicx}
-\graphicspath{imagenes/}
-
-\usepackage{float}
-\usepackage{placeins}
-
-\usepackage{subfiles}
-\usepackage{parskip}
+% \usepackage{subfiles}
+% \usepackage{parskip}
 
 % IMPORTANT: babel before tikz/pgfplots
 \usepackage[spanish, es-noshorthands]{babel}
@@ -85,100 +71,107 @@ fill=green!30]
 \usepackage{circuitikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
+\usepackage{nshyper}
 
-\input{glosario}
+% \input{glosario}
 
 \begin{document}
 
-\begin{titlepage}
-	\centering
-	% {\LARGE \textsc{Universidad de Santiago de Chile}\par}
-	\vspace{1cm}
-	% {\Large \textsc{Instituto de Estudios Avanzados}\par}
-	\vspace{1.5cm}
-    \vfill
-	{\huge\bfseries Máquinas sonoras, electrónicas y computacionales\par}
-	{\large\bfseries Estrategias y recetas\par}
-	\vspace{2cm}
-	{\Large Aarón Montoya Moraga\par}
-    {\Large Matías Ignacio Serrano Acevedo\par}
-    \vfill
-% Bottom of the page
-	{\large \today\par}
-\end{titlepage}
+\frontmatter
 
-\tableofcontents
+\title{Máquinas sonoras}
 
-\newpage
+\subtitle{Electrónicas y computacionales}
 
-\part{Info}
+% \begin{titlepage}
+% 	\centering
+% 	% {\LARGE \textsc{Universidad de Santiago de Chile}\par}
+% 	\vspace{1cm}
+% 	% {\Large \textsc{Instituto de Estudios Avanzados}\par}
+% 	\vspace{1.5cm}
+%     \vfill
+% 	{\huge\bfseries Máquinas sonoras, electrónicas y computacionales\par}
+% 	{\large\bfseries Estrategias y recetas\par}
+% 	\vspace{2cm}
+% 	{\Large Aarón Montoya Moraga\par}
+%     {\Large Matías Ignacio Serrano Acevedo\par}
+%     \vfill
+% % Bottom of the page
+% 	{\large \today\par}
+% \end{titlepage}
 
-\subfile{info/prefacio}
-\subfile{info/autores}
-\subfile{info/cursos}
-\subfile{info/agradecimientos}
-\subfile{info/herramientas}
+% \tableofcontents
 
-\part{Conceptos maquinales}
+% \newpage
 
-\subfile{maquinas/energias}
-\subfile{maquinas/relojes}
-\subfile{maquinas/secuenciadores}
-\subfile{maquinas/osciladores}
-\subfile{maquinas/amplificadores}
-\subfile{maquinas/moduladores}
-\subfile{maquinas/filtros}
+% \part{Info}
 
+% \subfile{info/prefacio}
+% \subfile{info/autores}
+% \subfile{info/cursos}
+% \subfile{info/agradecimientos}
+% \subfile{info/herramientas}
 
-\part{Electricidad}
+% \part{Conceptos maquinales}
 
-\subfile{electricidad/voltaje}
-\subfile{electricidad/corriente}
-\subfile{electricidad/potencia}
-\subfile{electricidad/fuentes-de-poder.tex}
-
-\part{Electrónica}
-
-\chapter{Componentes básicos}
-
-\subfile{componentes-basicos/placa-de-pruebas}
-\subfile{componentes-basicos/resistores}
-\subfile{componentes-basicos/capacitores}
-
-\chapter{Conectores}
-
-\chapter{Circuitos integrados}
-
-\subfile{circuitos-integrados/chip555}
-\subfile{circuitos-integrados/chip4017}
-\subfile{circuitos-integrados/chip4093}
-
-\part{Computación}
-
-\chapter{Bloques fundamentales de la programación}
-
-\subfile{computacion/variables}
-\subfile{computacion/funciones}
-
-\part{Interfaces}
-
-\subfile{interfaces/botones}
+% \subfile{maquinas/energias}
+% \subfile{maquinas/relojes}
+% \subfile{maquinas/secuenciadores}
+% \subfile{maquinas/osciladores}
+% \subfile{maquinas/amplificadores}
+% \subfile{maquinas/moduladores}
+% \subfile{maquinas/filtros}
 
 
-\part{Ejemplos}
+% \part{Electricidad}
 
-\subfile{ejemplos/cuatro-cuadradas}
+% \subfile{electricidad/voltaje}
+% \subfile{electricidad/corriente}
+% \subfile{electricidad/potencia}
+% \subfile{electricidad/fuentes-de-poder.tex}
 
-\part{Anexos}
+% \part{Electrónica}
 
-\subfile{anexos/albumes}
-\subfile{anexos/maquinas}
-\subfile{anexos/organizaciones}
-\subfile{anexos/personas}
+% \chapter{Componentes básicos}
+
+% \subfile{componentes-basicos/placa-de-pruebas}
+% \subfile{componentes-basicos/resistores}
+% \subfile{componentes-basicos/capacitores}
+
+% \chapter{Conectores}
+
+% \chapter{Circuitos integrados}
+
+% \subfile{circuitos-integrados/chip555}
+% \subfile{circuitos-integrados/chip4017}
+% \subfile{circuitos-integrados/chip4093}
+
+% \part{Computación}
+
+% \chapter{Bloques fundamentales de la programación}
+
+% \subfile{computacion/variables}
+% \subfile{computacion/funciones}
+
+% \part{Interfaces}
+
+% \subfile{interfaces/botones}
 
 
-\printglossaries
+% \part{Ejemplos}
 
-\printbibliography
+% \subfile{ejemplos/cuatro-cuadradas}
+
+% \part{Anexos}
+
+% \subfile{anexos/albumes}
+% \subfile{anexos/maquinas}
+% \subfile{anexos/organizaciones}
+% \subfile{anexos/personas}
+
+
+% \printglossaries
+
+% \printbibliography
 
 \end{document}
