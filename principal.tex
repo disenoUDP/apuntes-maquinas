@@ -4,20 +4,6 @@
 
 \usepackage{csquotes}
 \usepackage[style=verbose-note]{biblatex}
-% \addbibresource{biblio.bib}
-
-% \usepackage{glossaries}
-% \makeglossaries
-% \setglossarystyle{altlist}
-
-% \usepackage{graphicx}
-% \graphicspath{imagenes/}
-
-% \usepackage{float}
-% \usepackage{placeins}
-
-% \usepackage{subfiles}
-% \usepackage{parskip}
 
 % IMPORTANT: babel before tikz/pgfplots
 \usepackage[spanish, es-noshorthands]{babel}
@@ -73,8 +59,6 @@ fill=green!30]
 \pgfplotsset{compat=1.18}
 \usepackage{nshyper}
 
-% \input{glosario}
-
 \begin{document}
 
 \frontmatter
@@ -83,7 +67,9 @@ fill=green!30]
 
 \subtitle{Electrónicas y computacionales}
 
-\author{Aarón Montoya Moraga y Matías Ignacio Serrano Acevedo}
+\author{Aarón Montoya Moraga, and Matías Ignacio Serrano Acevedo}
+
+\nostarchlocation{Santiago}
 
 \makehalftitle
 
@@ -95,40 +81,18 @@ fill=green!30]
 
 \mainmatter
 
-\chapter{Prefacio}
+\subfile{info/prefacio}
 
-\chapter{Conceptos maquinales}
+\subfile{info/autores}
+
+\subfile{info/cursos}
 
 \backmatter
 
 \colophon
 
-% \begin{titlepage}
-% 	\centering
-% 	% {\LARGE \textsc{Universidad de Santiago de Chile}\par}
-% 	\vspace{1cm}
-% 	% {\Large \textsc{Instituto de Estudios Avanzados}\par}
-% 	\vspace{1.5cm}
-%     \vfill
-% 	{\huge\bfseries Máquinas sonoras, electrónicas y computacionales\par}
-% 	{\large\bfseries Estrategias y recetas\par}
-% 	\vspace{2cm}
-% 	{\Large Aarón Montoya Moraga\par}
-%     {\Large Matías Ignacio Serrano Acevedo\par}
-%     \vfill
-% % Bottom of the page
-% 	{\large \today\par}
-% \end{titlepage}
 
-% \tableofcontents
 
-% \newpage
-
-% \part{Info}
-
-% \subfile{info/prefacio}
-% \subfile{info/autores}
-% \subfile{info/cursos}
 % \subfile{info/agradecimientos}
 % \subfile{info/herramientas}
 
