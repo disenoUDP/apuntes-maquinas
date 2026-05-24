@@ -299,7 +299,9 @@
   \vspace{2.15in}%
   \vspace{-\baselineskip}%
   {\futuraheavy\fontsize{18\p@}{22\p@}\selectfont
-    by \@author\par}%
+    % espanol
+    % by \@author\par}%
+    por \@author\par}%
   \vspace{12\p@}%
   \vspace{\baselineskip}%
   \if\@nostarchlogo\@empty\relax\else
