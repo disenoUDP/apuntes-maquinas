@@ -3,11 +3,7 @@
 
 \begin{document}
 
-\ifSubfilesClassLoaded{
-    \chapter{Componentes básicos}
-}{}
-
-\section{Capacitores}
+\chapter{Capacitores}
 
 Los capacitores son componentes pasivos de dos terminales que se utilizan para almacenar energía eléctrica en un circuito.
 
@@ -21,7 +17,7 @@ También en español se tiende a usar la palabra condensador, pero nos gusta en 
 
 Así los resistores tienen o ejercen resistencia, y los capacitores tienen o ejercen capacitancia.
 
-\subsection{En serie}
+\section{En serie}
 
 Si tenemos dos capacitores en serie, llamados $C_1$ y $C_2$, entre los nodos A y B, podemos diagramarlos así:
 
@@ -37,7 +33,7 @@ Si tenemos dos capacitores en serie, llamados $C_1$ y $C_2$, entre los nodos A y
 Podemos reemplazar estos dos capacitores por uno equivalente $C_{eq}$, que se calcula usando la fórmula:
 
 \begin{equation}
-\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2}
+C_{eq} = \frac{C_{1} \cdot C_{2}}{C_{1} + C_{2}}
 \end{equation}
 
 o usando la fórmula equivalente:
@@ -56,7 +52,7 @@ y diagramado así:
   to[short, -o] (6,0) node[right]{B};
 \end{circuitikz}
 
-\subsection{En paralelo}
+\section{En paralelo}
 
 Si tenemos dos capacitores en paralelo, llamados $C_1$ y $C_2$, entre los nodos A y B, podemos diagramarlos así:
 
