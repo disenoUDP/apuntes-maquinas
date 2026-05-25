@@ -54,7 +54,6 @@ draw=black,
 fill=green!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-
 \usepackage{circuitikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
@@ -102,11 +101,16 @@ fill=green!30]
 \subfile{electricidad/fuentes-de-poder.tex}
 
 \subfile{componentes-basicos/placa-de-pruebas}
+\subfiles{componentes-basicos/cables}
 \subfile{componentes-basicos/resistores}
 \subfile{componentes-basicos/capacitores}
 \subfile{componentes-basicos/diodos}
 
 \subfile{interfaces/botones}
+
+\subfile{circuitos-integrados/chip555}
+\subfile{circuitos-integrados/chip4017}
+\subfile{circuitos-integrados/chip4093}
 
 \subfile{computacion/variables}
 \subfile{computacion/funciones}
@@ -119,22 +123,6 @@ fill=green!30]
 \subfile{anexos/personas}
 
 \backmatter
-
-
-% \chapter{Conectores}
-
-% \chapter{Circuitos integrados}
-
-% \subfile{circuitos-integrados/chip555}
-% \subfile{circuitos-integrados/chip4017}
-% \subfile{circuitos-integrados/chip4093}
-
-% \part{Computación}
-
-% \chapter{Bloques fundamentales de la programación}
-
-
-% \part{Ejemplos}
 
 % \subfile{ejemplos/cuatro-cuadradas}
 
