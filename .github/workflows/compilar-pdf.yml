@@ -44,22 +44,31 @@ jobs:
 
       - name: compile PDF
         run: |
-          xelatex -interaction=nonstopmode principal.tex
+          latexmk \
+            -xelatex \
+            -use-biber \
+            -interaction=nonstopmode \
+            -file-line-error \
+            principal.tex
 
-          bibtex principal || true
+      # - name: compile PDF
+      #   run: |
+      #     xelatex -interaction=nonstopmode principal.tex
 
-          makeindex -s nostarch.ist -o principal.ind principal.idx || true
+      #     bibtex principal || true
 
-          xelatex -interaction=nonstopmode principal.tex
-          xelatex -interaction=nonstopmode principal.tex
+      #     makeindex -s nostarch.ist -o principal.ind principal.idx || true
 
-      - name: rerun until references stabilize
-        run: |
-          while grep -q "Label(s) may have changed" principal.log
-          do
-            echo "Rerunning XeLaTeX..."
-            xelatex -interaction=nonstopmode principal.tex
-          done || true
+      #     xelatex -interaction=nonstopmode principal.tex
+      #     xelatex -interaction=nonstopmode principal.tex
+
+      # - name: rerun until references stabilize
+      #   run: |
+      #     while grep -q "Label(s) may have changed" principal.log
+      #     do
+      #       echo "Rerunning XeLaTeX..."
+      #       xelatex -interaction=nonstopmode principal.tex
+      #     done || true
 
 
       - name: show logs on failure
