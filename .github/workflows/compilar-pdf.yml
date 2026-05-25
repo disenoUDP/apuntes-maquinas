@@ -46,7 +46,7 @@ jobs:
         run: |
           latexmk \
             -xelatex \
-            -use-biber \
+            -bibtex \
             -interaction=nonstopmode \
             -file-line-error \
             principal.tex
