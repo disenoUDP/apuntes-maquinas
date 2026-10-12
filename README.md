@@ -15,14 +15,10 @@ La versión más reciente se compila automáticamente con cada cambio en la rama
 Se necesita una distribución de LaTeX con XeLaTeX y biber, por ejemplo TeX Live o MacTeX.
 
 ```sh
-xelatex principal.tex
-biber principal
-makeindex -s nostarch.ist -o principal.ind principal.idx
-xelatex principal.tex
-xelatex principal.tex
+latexmk principal.tex
 ```
 
-El resultado es `principal.pdf`.
+`latexmk` lee la configuración de `.latexmkrc`: compila con XeLaTeX, corre biber y makeindex, y repite hasta que las referencias se estabilizan. El resultado es `principal.pdf`. Para borrar los archivos intermedios se usa `latexmk -c`.
 
 Cada capítulo es un subarchivo (paquete `subfiles`), así que también se puede compilar por separado desde su carpeta, por ejemplo `xelatex chip555.tex` dentro de `circuitos-integrados/`.
 

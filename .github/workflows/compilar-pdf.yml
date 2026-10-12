@@ -45,8 +45,9 @@ jobs:
       - name: show logs on failure
         if: failure()
         run: |
-          cat principal.log
-          cat principal.blg
+          for f in principal.log principal.blg; do
+            [ ! -f "$f" ] || cat "$f"
+          done
 
       - name: preparar sitio
         run: |
