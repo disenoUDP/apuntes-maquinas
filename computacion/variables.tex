@@ -9,7 +9,7 @@ En computación usamos variables para almacenar información. Existen muchos tip
 
 En lenguajes como C, debemos declarar el tipo de variable que queremos usar. En lenguajes más recientes, como JavaScript o Python, no es necesario declarar el tipo de variable, ya que el lenguaje se encarga de inferirlo.
 
-Existe un compromiso: si la persona programadora tiene mucho cuidado de planificar y diseñar el comportamiento de las variables, esto permite que el código corra de forma muy rápida y eficiente en recursos. Por el otro lado, hay lenguajes que permiten que escribamos muy rápidamente código, sin preocuparnos por el tipo de variable, pero esto hace que el código corra de forma más lento o ineficiente en recursos.
+Existe un compromiso: si la persona programadora tiene mucho cuidado de planificar y diseñar el comportamiento de las variables, esto permite que el código corra de forma muy rápida y eficiente en recursos. Por el otro lado, hay lenguajes que permiten que escribamos muy rápidamente código, sin preocuparnos por el tipo de variable, pero esto hace que el código corra de forma más lenta o ineficiente en recursos.
 
 Cuando estamos haciendo tareas en nuestro taller computacional que correremos unas cuantas veces, o que no necesitamos rapidez, tendemos a prototipar en lenguajes modernos, como Python. Pero cuando estamos programando una máquina sonora, que necesita procesar audio en tiempo real, estar atenta a sensores, controlar actuadores, lo más probable es que necesitemos que esto ocurra muy rápido y con mucha eficiencia, por eso tenderemos a programar en lenguajes como C++.
 
@@ -35,7 +35,7 @@ Las variables de tipo entera pueden almacenar números enteros, y usan más de u
 La cantidad de valores posibles sigue la ecuación:
 
 \begin{equation}
-    \text{valores posibles} = {símbolos posibles}^{\text{número de símbolos usados}}
+    \text{valores posibles} = \text{símbolos posibles}^{\text{número de símbolos usados}}
 \end{equation}
 
 en nuestro caso con bits, los símbolos posibles son 2 (0 y 1), con lo que la ecuación resulta:
@@ -71,11 +71,11 @@ Resolvamos para algunos valores de bits:
 
 Si una variable integer entonces almacena sus valores en 16 bits, puede describir 65536 valores posibles. Estos valores pueden ser distribuidos de forma que la variable pueda almacenar valores negativos, o que solo almacene valores positivos y cero.
 
- Una variable unsigned int de 16 bits puede almacenar valores desde 0 hasta 65535. Una variable signed int de 16 bits en torno a cero entonces puede almacenar valores desde -32768 hasta 32767. Este rango no es simétrico, ya que el cero es un valor dentro del rango, y por razones técnicas que no vienen al caso aquí, el rango de valores negativos es un valor más grande que el el rango de valores positivos.
+Una variable unsigned int de 16 bits puede almacenar valores desde 0 hasta 65535. Una variable signed int de 16 bits en torno a cero entonces puede almacenar valores desde -32768 hasta 32767. Este rango no es simétrico, ya que el cero es un valor dentro del rango, y por razones técnicas que no vienen al caso aquí, el rango de valores negativos es un valor más grande que el rango de valores positivos.
 
-Existen varias formas posibles de las variables enteras, en ciertos contextos, por ejemplo programando un microcontrolador Arduino o Raspberry Pi Pico en particular, las variables int a secas usan 16 bits, pero en otros contextos, como en un computador de escritorio de la década de 2020s, las variables int a secas pueden ser de 32 bits, o incluso 64 bits. Por eso es importante leer la documentación del lenguaje y del compilador que estemos usando.
+Existen varias formas posibles de las variables enteras, en ciertos contextos, por ejemplo programando un microcontrolador Arduino Uno, las variables int a secas usan 16 bits, pero en otros contextos, como en un microcontrolador Raspberry Pi Pico o en un computador de escritorio de la década de 2020, las variables int a secas usan 32 bits. Por eso es importante leer la documentación del lenguaje y del compilador que estemos usando.
 
-Para introducir especificidad y portabilidad al código que escribimos, podemos usar tipos de variables enteras con prefijos que nos indiquen el tamaño en bits de la variable, y si usan signo o no, por ejemplo:
+Para introducir especificidad y portabilidad al código que escribimos, podemos usar tipos de variables enteras con convenciones de nombres que nos indiquen el tamaño en bits de la variable, y si usan signo o no, por ejemplo:
 
 \begin{table}[H]
 \begin{tabular}{c|c}
@@ -96,9 +96,9 @@ El sufijo t es de \textit{type}, y existe en C para indicar que esta palabra es 
 
 \section{Punto flotante}
 
-Las variables de tipo punto flotante (llamadas float en inglés) pueden almacenar números con parte decimal. A mismo número de bits que las variables enteras, las variables de punto flotante pueden almacenar un rango mayor de valores, a costa de tener menor precisión.
+Las variables de tipo punto flotante (llamadas float en inglés) pueden almacenar números con parte decimal. Con el mismo número de bits que las variables enteras, las variables de punto flotante pueden almacenar un rango mayor de valores, a costa de tener menor precisión.
 
-La construcción interna de los números de punto flotante requiere de estándares como el IEEE754, y de dispositivos que sean capaces de operar estos números con una aritmética distinta a la de los números enteros.
+La construcción interna de los números de punto flotante requiere de estándares como el IEEE 754, y de dispositivos que sean capaces de operar estos números con una aritmética distinta a la de los números enteros.
 
 En C++ para definir una variable de punto flotante usamos la notación
 

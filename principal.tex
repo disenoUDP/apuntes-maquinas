@@ -2,59 +2,34 @@
 
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{siunitx}
+\sisetup{per-mode=fraction}
 \usepackage{float}
 
 \usepackage{csquotes}
 \usepackage[style=verbose-note]{biblatex}
+\addbibresource{biblio.bib}
 \usepackage{subfiles}
 
 % IMPORTANT: babel before tikz/pgfplots
 \usepackage[spanish, es-noshorthands]{babel}
 \usepackage{tikz}
-\usetikzlibrary{calc,positioning, arrows.meta}
-\usetikzlibrary{shapes, arrows}
-\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc, positioning, arrows.meta, backgrounds}
 \tikzset{
-    block/.style = {
-        draw,
+    process/.style = {
         rectangle,
         minimum width=3cm,
-        minimum height=1.5cm,
-        align=center
+        minimum height=1cm,
+        text centered,
+        text width=3cm,
+        draw=black,
+        fill=orange!30
+    },
+    arrow/.style = {
+        thick,
+        -{Stealth}
     }
 }
-\usetikzlibrary{shapes.geometric, arrows}
-
-\tikzstyle{startstop} = [rectangle, rounded corners, 
-minimum width=3cm, 
-minimum height=1cm,
-text centered, 
-draw=black, 
-fill=red!30]
-
-\tikzstyle{io} = [trapezium, 
-trapezium stretches=true, % A later addition
-trapezium left angle=70, 
-trapezium right angle=110, 
-minimum width=3cm, 
-minimum height=1cm, text centered, 
-draw=black, fill=blue!30]
-
-\tikzstyle{process} = [rectangle, 
-minimum width=3cm, 
-minimum height=1cm, 
-text centered, 
-text width=3cm, 
-draw=black, 
-fill=orange!30]
-
-\tikzstyle{decision} = [diamond, 
-minimum width=3cm, 
-minimum height=1cm, 
-text centered, 
-draw=black, 
-fill=green!30]
-\tikzstyle{arrow} = [thick,->,>=stealth]
 
 \usepackage{circuitikz}
 \usepackage{pgfplots}
@@ -83,7 +58,7 @@ fill=green!30]
 
 \mainmatter
 
-\subfile{info/prefacio}
+% \subfile{info/prefacio}
 \subfile{info/autores}
 \subfile{info/cursos}
 \subfile{info/herramientas}
@@ -94,13 +69,13 @@ fill=green!30]
 \subfile{maquinas/secuenciadores}
 \subfile{maquinas/osciladores}
 \subfile{maquinas/amplificadores}
-\subfile{maquinas/moduladores}
+% \subfile{maquinas/moduladores}
 \subfile{maquinas/filtros}
 
 \subfile{electricidad/voltaje}
 \subfile{electricidad/corriente}
 \subfile{electricidad/potencia}
-\subfile{electricidad/fuentes-de-poder.tex}
+\subfile{electricidad/fuentes-de-poder}
 
 \subfile{componentes-basicos/placa-de-pruebas}
 \subfile{componentes-basicos/cables}
@@ -117,7 +92,9 @@ fill=green!30]
 \subfile{computacion/variables}
 \subfile{computacion/funciones}
 
-\chapter{Anexos}
+\appendix
+\renewcommand{\appendixname}{Anexo}
+\renewcommand{\chaptername}{Anexo}
 
 \subfile{anexos/albumes}
 \subfile{anexos/maquinas}
@@ -130,6 +107,6 @@ fill=green!30]
 
 % \printglossaries
 
-% \printbibliography
+\printbibliography
 
 \end{document}

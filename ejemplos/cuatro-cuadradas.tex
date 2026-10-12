@@ -9,9 +9,9 @@
 
 \chapter{Cuatro cuadradas}
 
-En este capítulo abordaremos el diseño de un sintetizador modular de cuatro pasos de onda cuadrada, incluyendo una cadena autoncontenida, desde reloj hasta parlante.
+En este capítulo abordaremos el diseño de un sintetizador modular de cuatro pasos de onda cuadrada, incluyendo una cadena autocontenida, desde reloj hasta parlante.
 
-A grandes ragos tendremos los siguientes módulos:
+A grandes rasgos tendremos los siguientes módulos:
 
 \begin{enumerate}
     \item Reloj
@@ -70,7 +70,7 @@ Las entradas al reloj son 2:
 
 \subsection{Salidas}
 
-Las salidas al reloj son 2: la señal de reloj, una onda cuadrada que alterna entre 0V y el voltaje de alimentación.
+Las salidas al reloj son 2: la señal de reloj, una onda cuadrada que alterna entre \qty{0}{\volt} y el voltaje de alimentación.
 
 \begin{enumerate}
     \item Tierra
@@ -109,7 +109,7 @@ Las entradas al secuenciador son 3
 
 \subsection{Salidas}
 
-Las salidas al secuenciador son 5: tierra, y 1 por cada paso del secuenciador, alternando entre 0V y el voltaje de alimentación.
+Las salidas al secuenciador son 5: tierra, y 1 por cada paso del secuenciador, alternando entre \qty{0}{\volt} y el voltaje de alimentación.
 
 \begin{enumerate}
     \item Tierra
@@ -186,7 +186,7 @@ Para el módulo de mezclador y amplificador proponemos el uso del chip 386.
 
 \section{Parlante}
 
-Para parlante proponemos el uso de un parlante de 8 $\Omega$.
+Para parlante proponemos el uso de un parlante de \qty{8}{\ohm}.
 
 \begin{circuitikz}
     \draw (0,0) node[draw, minimum height=2.0cm, minimum width=1.0cm] (box) {Parlante};
@@ -200,7 +200,7 @@ Para parlante proponemos el uso de un parlante de 8 $\Omega$.
 
 \begin{enumerate}
     \item Tierra
-    \item Señal de audio monófonica
+    \item Señal de audio monofónica
 \end{enumerate}
 
 \subsection{Salidas}

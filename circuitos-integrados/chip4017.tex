@@ -5,7 +5,7 @@
 
 \chapter{Chip 4017} \label{sec:chip4017}
 
-El 4017 es un contador de décadas.
+El 4017 es un contador de década.
 
 Lo usaremos para secuenciar.
 
@@ -88,7 +88,7 @@ Para usar el 4017 para contar 4 pasos necesitamos cumplir con los siguientes cri
     \item Hacer que responda al pulso de un reloj
 \end{itemize}
 
-Como las salidas de la secuencia van de 0 a 9, respetaremos esta convención de partir contando desde 0.
+Como las salidas de la secuencia van de 0 a 9, tenemos que tener conciencia de que existen convenciones técnicas de partir contando desde 0, pero también convenciones humanas de partir contando desde 1.
 
 Como estamos construyendo un secuenciador de 4 pasos, queremos que el circuito cuente 0, 1, 2, 3, y cuando llegue a 4 vuelva a 0.
 
@@ -112,7 +112,7 @@ Como la patita 10 es el paso 4, la conectamos a la patita 15 de reseteo, para qu
 La patita 14 recibirá la entrada de reloj, mientras que la patita 13 es la que habilita el circuito para que siga al reloj.
 
 \begin{enumerate}
-    \item Patita 13 a GND a través de un resistor de 100 k$\Omega$ para habilitar el circuito.
+    \item Patita 13 a GND a través de un resistor de \qty{100}{\kilo\ohm} para habilitar el circuito.
     \item Patita 14 recibe la conexión de un reloj, por ejemplo, la salida de un 555 en configuración astable.
 \end{enumerate}
 

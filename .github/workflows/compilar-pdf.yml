@@ -55,7 +55,7 @@ jobs:
         run: |
           xelatex -interaction=nonstopmode principal.tex
 
-          bibtex principal || true
+          biber principal
 
           makeindex -s nostarch.ist -o principal.ind principal.idx || true
 
