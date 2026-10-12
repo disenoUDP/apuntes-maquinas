@@ -29,3 +29,12 @@
 *.run.xml
 *.bbl
 *.blg
+*.idx
+*.ind
+*.ilg
+*.xdv
+*.lof
+*.lot
+
+# archivo de estilo de índice de la clase nostarch, sí se versiona
+!nostarch.ist
